@@ -15,7 +15,7 @@ io.on('connection', socket => {
     console.log("User connected");
 
     socket.on('change color', color => {
-        io.sockets.emit('change color', color);
+      socket.broadcast.emit('change color', color);
         console.log('Change Color to:', color)
     })
 
